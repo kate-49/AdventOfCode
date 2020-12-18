@@ -1013,14 +1013,17 @@ class Day2
 
             nums = array[0]
             nums = nums.split(/\D/)
-            min = (nums[0].to_i)
-            max = (nums[-1].to_i)
+            first = (nums[0].to_i) - 1
+            second = (nums[-1].to_i) - 1
 
             letter = array[1]
             letter = letter.gsub(/[^0-9a-z ]/i, '')
 
-            ans = password.count(letter)
-            if ans >= min && ans <= max
+            if password[first] == letter && password[second] == letter
+                notValid += 1
+            elsif password[first] == letter
+                valid += 1
+            elsif password[second] == letter
                 valid += 1
             end
         end
