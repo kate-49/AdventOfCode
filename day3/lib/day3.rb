@@ -353,8 +353,8 @@ class Day3
             if line[y] == "#"
                 trees += 1
             end
-           if y > 8
-                y -= 8
+           if y == 10
+                y -= 10
                 x += 1
            else
             x += 1
@@ -365,6 +365,88 @@ class Day3
     end
 
     def Day3.R3D1()
+        string = TEST1.delete(' ')
+        array = string.split("\n")
+        array.shift
+        trees = 0
+
+        x = 1
+        y = 3
+
+        while x < array.length() do
+            line = array[x] 
+            if line[y] == "#"
+                trees += 1
+            end
+           if y > 8
+                y -= 8
+                x += 1
+           else
+            x += 1
+            y += 3
+           end
+            
+        
+        end
+        return trees
+    end
+
+    def Day3.R5D1()
+        string = TEST1.delete(' ')
+        array = string.split("\n")
+        array.shift
+        trees = 0
+
+        x = 1
+        y = 5
+
+        while x < array.length() do
+            line = array[x] 
+
+            if line[y] == "#"
+                trees += 1
+            end
+           if y > 6
+                y -= 6
+                x += 1
+           else
+            x += 1
+            y += 5
+           end
+            
+        
+        end
+        return trees
+    end
+
+    def Day3.R7D1()
+        string = TEST1.delete(' ')
+        array = string.split("\n")
+        array.shift
+        trees = 0
+
+        x = 1
+        y = 3
+
+        while x < array.length() do
+            line = array[x] 
+            if line[y] == "#"
+                trees += 1
+            end
+           if y > 8
+                y -= 8
+                x += 1
+           else
+            x += 1
+            y += 3
+           end
+            
+        
+        end
+        return trees
+    end
+
+    def Day3.R1D2()
         string = TEST1.delete(' ')
         array = string.split("\n")
         array.shift
