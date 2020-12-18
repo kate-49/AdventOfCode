@@ -22,9 +22,9 @@ describe Day3 do
           expect(Day3.R7D1()).to eq(4)
         end
 
-        #it "tests function 5" do
-            #expect(Day3.R1D2()).to eq(2)
-        #end
+        it "tests function 5" do
+            expect(Day3.R1D2()).to eq(2)
+        end
         
     end
 end

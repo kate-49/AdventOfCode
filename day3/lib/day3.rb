@@ -454,20 +454,20 @@ class Day3
         array.shift
         trees = 0
 
-        x = 1
-        y = 3
+        x = 2
+        y = 1
 
         while x < array.length() do
             line = array[x] 
             if line[y] == "#"
                 trees += 1
             end
-           if y > 8
-                y -= 8
-                x += 1
+           if y == 10
+                y -= 10
+                x += 2
            else
-            x += 1
-            y += 3
+            x += 2
+            y += 1
            end
             
         
