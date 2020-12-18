@@ -1,5 +1,5 @@
 class Day3
-    INPUT = "
+    OLD = "
     .........#....#.###.........##.
     ..##.#......#......#.......##.
     ##....#.#.......#.....#........
@@ -325,12 +325,50 @@ class Day3
     .....#..........#.#........#.#.
     "
 
-    def Day3.run()
-        string = INPUT.delete(' ')
+    TEST1 = "
+    ..##.......
+    #...#...#..
+    .#....#..#.
+    ..#.#...#.#
+    .#...##..#.
+    ..#.##.....
+    .#.#.#....#
+    .#........#
+    #.##...#...
+    #...##....#
+    .#..#...#.#
+    "
+
+    def Day3.R1D1()
+        string = TEST1.delete(' ')
         array = string.split("\n")
         array.shift
-        trees = []
-        notTree = []
+        trees = 0
+
+        x = 1
+        y = 1
+
+        while x < array.length() do
+            line = array[x] 
+            if line[y] == "#"
+                trees += 1
+            end
+           if y > 8
+                y -= 8
+                x += 1
+           else
+            x += 1
+            y += 1
+           end
+        end
+        return trees
+    end
+
+    def Day3.R3D1()
+        string = TEST1.delete(' ')
+        array = string.split("\n")
+        array.shift
+        trees = 0
 
         x = 1
         y = 3
@@ -338,12 +376,10 @@ class Day3
         while x < array.length() do
             line = array[x] 
             if line[y] == "#"
-                trees << line[y]
-            else 
-                notTree << line[y]
+                trees += 1
             end
-           if y >= 28
-                y -= 28
+           if y > 8
+                y -= 8
                 x += 1
            else
             x += 1
@@ -352,8 +388,6 @@ class Day3
             
         
         end
-        if trees.count() + notTree.count() == array.length-1
-            return notTree.count()
-        end
+        return trees
     end
 end

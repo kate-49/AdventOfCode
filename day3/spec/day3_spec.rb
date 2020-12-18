@@ -2,13 +2,15 @@ require "Day3"
 
 describe Day3 do
 
+   
+
     context "test examples" do
-      it "returns accurate number of trees" do
-        expect(Day3.run()).to eq(5)
+      it "tests function 1" do
+        expect(Day3.R1D1()).to eq(2)
       end
 
-      it "returns 0 if no trees" do
-            expect(Day3.run()).to eq(2)
+      it "tests function 2" do
+            expect(Day3.R3D1()).to eq(7)
       end
     end
 end
