@@ -1,7 +1,7 @@
 class Day3
     INPUT = "
     .........#....#.###.........##.
-    ..###.#......#......#.......##.
+    ..##.#......#......#.......##.
     ##....#.#.......#.....#........
     #........#..........#.#...#...#
     #....###...##.....#........#...
@@ -322,28 +322,38 @@ class Day3
     .#.....#..#..#......#....#.#...
     ...#..........................#
     ............#.#..#.##......#...
+    .....#..........#.#........#.#.
     "
 
-    def Day3.run(string)
-        string = string.delete(' ')
+    def Day3.run()
+        string = INPUT.delete(' ')
         array = string.split("\n")
         array.shift
-        length = (array.length() - 1)
-        trees = 0
+        trees = []
+        notTree = []
 
         x = 1
         y = 3
 
-        length.times do
+        while x < array.length() do
             line = array[x] 
             if line[y] == "#"
-                trees += 1
+                trees << line[y]
+            else 
+                notTree << line[y]
             end
-           
+           if y >= 28
+                y -= 28
+                x += 1
+           else
             x += 1
             y += 3
+           end
+            
         
         end
-        return trees
+        if trees.count() + notTree.count() == array.length-1
+            return notTree.count()
+        end
     end
 end
