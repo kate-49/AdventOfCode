@@ -424,21 +424,23 @@ class Day3
         array = string.split("\n")
         array.shift
         trees = 0
+        yco = []
 
         x = 1
-        y = 3
+        y = 7
 
         while x < array.length() do
             line = array[x] 
+           
             if line[y] == "#"
                 trees += 1
             end
-           if y > 8
-                y -= 8
+           if y > 3
+                y -= 4
                 x += 1
            else
             x += 1
-            y += 3
+            y += 7
            end
             
         

@@ -18,12 +18,12 @@ describe Day3 do
         end
 
        
-       # it "tests function 4" do
-          #  expect(Day3.R7D1()).to eq(4)
-       # end
+       it "tests function 4" do
+          expect(Day3.R7D1()).to eq(4)
+        end
 
         #it "tests function 5" do
-           # expect(Day3.R1D2()).to eq(2)
+            #expect(Day3.R1D2()).to eq(2)
         #end
         
     end
