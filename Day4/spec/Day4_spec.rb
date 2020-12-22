@@ -18,12 +18,14 @@ describe Day4 do
             hgt:179cm
             ")).to eq("Valid")
         end
+=end
         it "returns invalid if missing a field" do
             expect(Day4.run("
             iyr:2013 ecl:amb cid:350 eyr:2023 pid:028048884 
             hcl:#cfa07d byr:1929
             ")).to eq("Invalid")
         end
+=begin
         it "returns invalid if missing a field other than cid" do
             expect(Day4.run("
             hcl:#cfa07d eyr:2025 pid:166559648
