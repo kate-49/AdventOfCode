@@ -1,7 +1,7 @@
 class Day3
     TEST = "
     .........#....#.###.........##.
-    ..##.#......#......#.......##.
+    ..###.#......#......#.......##.
     ##....#.#.......#.....#........
     #........#..........#.#...#...#
     #....###...##.....#........#...
@@ -324,6 +324,7 @@ class Day3
     ............#.#..#.##......#...
     .....#..........#.#........#.#.
     "
+=begin
     TEST2 = "
     .........#....#.###.........##.
     ..##.#......#......#.......##.
@@ -355,13 +356,14 @@ class Day3
     ..#......#...##.#..##.......#..
     .#.#....#.#..#.....#..#...#....
     "
+=end
 
     def Day3.R1D1()
-        string = TEST2.delete(' ')
+        string = TEST.delete(' ')
         array = string.split("\n")
         array.shift
         trees = 0
-
+       
         x = 1
         y = 1
 
@@ -382,7 +384,7 @@ class Day3
     end
 
     def Day3.R3D1()
-        string = TEST2.delete(' ')
+        string = TEST.delete(' ')
         array = string.split("\n")
         array.shift
         trees = 0
@@ -392,82 +394,73 @@ class Day3
 
         while x < array.length() do
             line = array[x] 
-      
+        
             if line[y] == "#"
                 trees += 1
             end
-           if y > 28
+           if y >= 28
                 y -= 28
                 x += 1
            else
             x += 1
             y += 3
            end
-            
-        
         end
         return trees
     end
 
     def Day3.R5D1()
-        string = TEST2.delete(' ')
+        string = TEST.delete(' ')
         array = string.split("\n")
         array.shift
         trees = 0
-
         x = 1
         y = 5
 
         while x < array.length() do
             line = array[x] 
-
             if line[y] == "#"
                 trees += 1
             end
-           if y > 26
+           if y >= 26
                 y -= 26
                 x += 1
            else
             x += 1
             y += 5
-           end
-            
+           end 
         
         end
         return trees
     end
 
     def Day3.R7D1()
-        string = TEST2.delete(' ')
+        string = TEST.delete(' ')
         array = string.split("\n")
         array.shift
         trees = 0
-        yco = []
 
         x = 1
         y = 7
 
         while x < array.length() do
             line = array[x] 
-       
             if line[y] == "#"
                 trees += 1
             end
-           if y > 23
+           if y >= 24
                 y -= 24
                 x += 1
            else
             x += 1
             y += 7
            end
-            
-        
         end
         return trees
     end
 
     def Day3.R1D2()
-        string = TEST2.delete(' ')
+        string = TEST.delete(' ')
         array = string.split("\n")
         array.shift
         trees = 0
@@ -477,6 +470,7 @@ class Day3
 
         while x < array.length() do
             line = array[x] 
+           
             if line[y] == "#"
                 trees += 1
             end

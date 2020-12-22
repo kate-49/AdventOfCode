@@ -8,7 +8,7 @@ describe Day3 do
         end
 
         it "tests function 2" do
-            expect(Day3.R3D1()).to eq(24)
+            expect(Day3.R3D1()).to eq(240)
         end
 
         it "tests function 3" do
