@@ -17,7 +17,7 @@ class Day4
 
         if array.length == 8
             return "Valid"
-        elseif array.length == 7 && cid == true
+        elsif array.length == 7 && cid == false
             return "Valid"
         else 
             return "Invalid"
