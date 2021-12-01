@@ -2009,26 +2009,13 @@ class Day1
       i = 1
   
       while i < intArray.length - 3 
-        puts intArray[i].is_a?(Integer)
-        puts "group a is " + bigArray[i] + " + " + bigArray[i+1] + " + " + bigArray[i+2]
-        puts (intArray[i] + intArray[i+1] + intArray[i+2])
-        puts "group b is " + bigArray[i+1] + " + " + bigArray[i+2] + " + " + bigArray[i+3]
-        puts intArray[i+1] + intArray[i+2] + intArray[i+3]
-        puts "-"
-        
-        if (intArray[i] + intArray[i+1] + intArray[i+2]) != (intArray[i+1] + intArray[i+2] + intArray[i+3])
-          if (intArray[i] + intArray[i+1] + intArray[i+2]) < (intArray[i+1] + intArray[i+2] + intArray[i+3])
-            puts "increase count "
-            count += 1
-          else 
-            puts "did not increase count" 
-          end
-        end
+        sumA = intArray[i] + intArray[i+1] + intArray[i+2]
+        sumB = intArray[i+1] + intArray[i+2] + intArray[i+3]
+        sumA < sumB ? count += 1 : count
         i += 1
       end
+      
       return count
     end
-
-
 
 end
