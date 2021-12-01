@@ -2005,17 +2005,30 @@ class Day1
       count = 0
       bigArray = INPUT.split("\n")
       bigArray.collect(&:strip!)
-      i = 0
-      while i < bigArray.length - 1 
-        if bigArray[i] < bigArray[i + 1]
-          puts "increase count as " + bigArray[i] + " smaller than " + bigArray[i+1]
-          count += 1
-        else 
-          puts "did not increase count as " + bigArray[i] + " bigger than " + bigArray[i+1]
+      intArray = bigArray.map(&:to_i)
+      i = 1
+  
+      while i < intArray.length - 3 
+        puts intArray[i].is_a?(Integer)
+        puts "group a is " + bigArray[i] + " + " + bigArray[i+1] + " + " + bigArray[i+2]
+        puts (intArray[i] + intArray[i+1] + intArray[i+2])
+        puts "group b is " + bigArray[i+1] + " + " + bigArray[i+2] + " + " + bigArray[i+3]
+        puts intArray[i+1] + intArray[i+2] + intArray[i+3]
+        puts "-"
+        
+        if (intArray[i] + intArray[i+1] + intArray[i+2]) != (intArray[i+1] + intArray[i+2] + intArray[i+3])
+          if (intArray[i] + intArray[i+1] + intArray[i+2]) < (intArray[i+1] + intArray[i+2] + intArray[i+3])
+            puts "increase count "
+            count += 1
+          else 
+            puts "did not increase count" 
+          end
         end
         i += 1
       end
       return count
     end
+
+
 
 end
