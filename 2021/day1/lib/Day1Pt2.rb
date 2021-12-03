@@ -1,4 +1,4 @@
-class Day1
+class Day1Pt2
     INPUT = "193
     197
     188
@@ -2001,7 +2001,7 @@ class Day1
     2658"
 
 
-    def Day1.run()
+    def Day1Pt2.run()
       count = 0
       bigArray = INPUT.split("\n")
       bigArray.collect(&:strip!)
