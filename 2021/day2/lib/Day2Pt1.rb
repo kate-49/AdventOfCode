@@ -1,4 +1,6 @@
-forward 2
+class Day2Pt1
+   INPUT = "
+   forward 2
 down 4
 down 1
 down 4
@@ -997,4 +999,40 @@ down 1
 forward 6
 down 6
 down 5
-forward 1
+forward 1"
+
+    def Day2Pt1.prepareInput()
+      bigArray = INPUT.split("\n")
+      bigArray.collect(&:strip!)
+      return bigArray
+    end
+
+    def Day2Pt1.calculateDirectionAndSteps(x)
+      element = x.split
+      direction = element[0]
+      steps = (element[1].to_i)
+      return direction, steps
+    end
+
+    def Day2Pt1.run()
+      horizontal = 0
+      depth = 0
+      aim = 0
+      array = prepareInput()
+    
+      array.each { |x|
+        direction, steps = calculateDirectionAndSteps(x)
+        case direction
+        when "down"
+          depth += steps
+        when "up"
+          depth -= steps
+        when "forward"
+          horizontal += steps
+        end 
+      }
+      return horizontal * depth
+    end
+
+
+end

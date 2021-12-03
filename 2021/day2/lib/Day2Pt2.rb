@@ -1,4 +1,4 @@
-class Day2
+class Day2Pt2
    INPUT = "
    forward 2
 down 4
@@ -1001,20 +1001,20 @@ down 6
 down 5
 forward 1"
 
-    def Day2.prepareInput()
+    def Day2Pt2.prepareInput()
       bigArray = INPUT.split("\n")
       bigArray.collect(&:strip!)
       return bigArray
     end
 
-    def Day2.calculateDirectionAndSteps(x)
+    def Day2Pt2.calculateDirectionAndSteps(x)
       element = x.split
       direction = element[0]
       steps = (element[1].to_i)
       return direction, steps
     end
 
-    def Day2.run()
+    def Day2Pt2.run()
       horizontal = 0
       depth = 0
       aim = 0
@@ -1032,7 +1032,7 @@ forward 1"
           depth += (aim*steps)
         end 
       }
-      return [horizontal, depth]
+      return horizontal * depth
     end
 
 
