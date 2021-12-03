@@ -1,4 +1,4 @@
-class Day3
+class Day3Pt2
    INPUT = 
    "111010101100
    100001001100
@@ -1002,13 +1002,13 @@ class Day3
    101011010101
   "
 
-   def Day3.prepareInput()
+   def Day3Pt2.PrepareInput()
     array = INPUT.split("\n")
     array.collect(&:strip!)
     return array
   end
 
-  def Day3.FindNumber(array, i, sizeDesired)
+  def Day3Pt2.FindNumber(array, i, sizeDesired)
     ones, zeros = 0, 0
     array.each do |arrayItem| 
       (arrayItem[i].to_i) == 0 ? zeros += 1 : ones += 1
@@ -1016,12 +1016,12 @@ class Day3
     sizeDesired == "biggest" ? ones >= zeros ? 1 : 0 : ones >= zeros ? 0 : 1
   end
 
-  def Day3.convertFromBinaryToInt(array)
+  def Day3Pt2.ConvertFromBinaryToInt(array)
     joinedArray = array.join("")
     return joinedArray.to_i(2)
   end
 
-  def Day3.removeUnecessaryValues(array, item, i)
+  def Day3Pt2.RemoveUnecessaryValues(array, item, i)
     newArray = []
     array.each do |arrayItem|
       if (arrayItem[i].to_i) == item
@@ -1031,17 +1031,17 @@ class Day3
     return newArray
   end
 
-  def Day3.run(value)
+  def Day3Pt2.run(value)
     i = 0
-    array = prepareInput()
+    array = PrepareInput()
     arrayElementLength = array[0].length
    
     while i < arrayElementLength
       value == "oxygen" ? item = FindNumber(array, i, 'biggest') : item = FindNumber(array, i, 'smallest')
-      array = removeUnecessaryValues(array, item, i)
+      array = RemoveUnecessaryValues(array, item, i)
       i += 1 
       if array.length == 1
-        return convertFromBinaryToInt(array)
+        return ConvertFromBinaryToInt(array)
       end
     end 
    
