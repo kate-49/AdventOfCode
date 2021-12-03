@@ -1008,52 +1008,43 @@ class Day3
     return array
   end
 
-  def Day3.Count(array, i)
+  def Day3.FindNumber(array, i, sizeDesired)
     ones, zeros = 0, 0
     array.each do |arrayItem| 
-      puts "arrayItem"
-      puts arrayItem
       (arrayItem[i].to_i) == 0 ? zeros += 1 : ones += 1
     end
-    ones > zeros ? 1 : 0
+    sizeDesired == "biggest" ? ones >= zeros ? 1 : 0 : ones >= zeros ? 0 : 1
   end
 
-  def Day3.CalculateEpsilon(gammaArray)
-    epsilonArray = []
-    gammaArray.each do |x| 
-      if x == 0 
-        epsilonArray << 1
-      elsif x == 1
-        epsilonArray << 0
+  def Day3.convertFromBinaryToInt(array)
+    joinedArray = array.join("")
+    return joinedArray.to_i(2)
+  end
+
+  def Day3.removeUnecessaryValues(array, item, i)
+    newArray = []
+    array.each do |arrayItem|
+      if (arrayItem[i].to_i) == item
+        newArray << arrayItem
       end
     end
-    return epsilonArray
+    return newArray
   end
 
-  def Day3.convertToBinary(array)
-    joinedArray = array.join("")
-    number = joinedArray.to_i(2)
-    return number
-  end
-
-  def Day3.run()
+  def Day3.run(value)
     i = 0
     array = prepareInput()
-    gammaArray = []
     arrayElementLength = array[0].length
-    puts arrayElementLength
    
     while i < arrayElementLength
-      greaterItem = Count(array, i)
-      gammaArray << greaterItem
+      value == "oxygen" ? item = FindNumber(array, i, 'biggest') : item = FindNumber(array, i, 'smallest')
+      array = removeUnecessaryValues(array, item, i)
       i += 1 
+      if array.length == 1
+        return convertFromBinaryToInt(array)
+      end
     end 
    
-    epsilonArray = CalculateEpsilon(gammaArray)
-    gamma = convertToBinary(gammaArray)
-    epsilon = convertToBinary(epsilonArray)
-    return gamma, epsilon
   end
-
 
 end
