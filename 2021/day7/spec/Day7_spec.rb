@@ -15,7 +15,7 @@ describe Day7Pt2 do
 
   context "test examples" do
     it "returns true if valid" do
-      expect(Day7Pt2.run()).to eq(168)
+      expect(Day7Pt2.run()).to eq(105461913)
     end
 
   end

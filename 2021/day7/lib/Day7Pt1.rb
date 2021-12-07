@@ -34,7 +34,6 @@ class Day7Pt1
 
     def Day7Pt1.run()
       intArray = prepareInput()
-      puts intArray
       midpoint = getMidpoint(intArray)
       fuel = calculateFuel(midpoint, intArray)
       return fuel
