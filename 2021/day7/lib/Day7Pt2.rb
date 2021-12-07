@@ -8,15 +8,20 @@ class Day7Pt2
     return intArray
   end
 
-  def Day7Pt2.getMidpoint(intArray)
+  def Day7Pt2.getMidpointOptions(intArray)
     sorted = intArray.sort
-    midpoint = intArray.length / 2
-    if intArray.length.even?
-      midpoint = sorted[midpoint-1, 2].sum / 2.0
-    else
-      midpoint = sorted[midpoint]
+    if sorted.min == 0 
+      count = 1
+    else 
+      count = sorted.min
     end
-    return midpoint
+  
+    optionsArray = []
+    while count <= sorted.max do 
+      optionsArray << count 
+      count += 1    
+    end
+    return optionsArray
   end
 
   def Day7Pt2.calculateFuel(midpoint, intArray)
@@ -24,20 +29,26 @@ class Day7Pt2
 
     intArray.each { |x| 
       if x > midpoint
-        fuel += x - midpoint
+        difference = x - midpoint
       else
-        fuel += midpoint - x
+        difference = midpoint - x
       end
+      answer = (1..difference).inject(:+) || 0
+      fuel += answer
     }
     return fuel
   end
 
   def Day7Pt2.run()
     intArray = prepareInput()
-    puts intArray
-    midpoint = getMidpoint(intArray)
-    fuel = calculateFuel(midpoint, intArray)
-    return fuel
+    midpointOptions = getMidpointOptions(intArray)
+    result = Hash.new
+
+    midpointOptions.each {|midpointOption|
+      result[midpointOption] = calculateFuel(midpointOption, intArray)
+    }
+    puts result
+    return result.sort_by { |key, value| value }.first
   end
 
 end
