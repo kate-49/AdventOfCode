@@ -1,21 +1,21 @@
-require "Day7Pt1"
-require "Day7Pt2"
+require "Day1Pt1"
+require "Day1Pt2"
 
-describe Day7Pt1 do
+describe Day1Pt1 do
 
     context "test examples" do
       it "returns true if valid" do
-        expect(Day7Pt1.run()).to eq(356958)
+        expect(Day1Pt1.run()).to eq(1162)
       end
     end
 end
 
 
-describe Day7Pt2 do
+describe Day1Pt2 do
 
   context "test examples" do
     it "returns true if valid" do
-      expect(Day7Pt2.run()).to eq(168)
+      expect(Day1Pt2.run()).to eq(1190)
     end
 
   end
