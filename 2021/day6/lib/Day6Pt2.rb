@@ -15,14 +15,14 @@ class Day6Pt2
     bigArray = INPUT.split(",")
     bigArray.collect(&:strip!)
     intArray = bigArray.map(&:to_i)
-    h = getEmptyHash()
-    intArray.each {|x| addValues(h, x)}
-    return h
+    hash = getEmptyHash()
+    intArray.each {|x| addValues(hash, x)}
+    return hash
   end 
 
-  def Day6Pt2.transferHashValues(hash, lhkey, lhvalue)
-    currentValue = hash[lhkey]
-    hash[lhkey] = currentValue + lhvalue
+  def Day6Pt2.transferHashValues(hash, hash2Key, hash2Value)
+    currentValue = hash[hash2Key]
+    hash[hash2Key] = currentValue + hash2Value
     return hash
   end
 
