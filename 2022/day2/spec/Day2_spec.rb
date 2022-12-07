@@ -1,5 +1,4 @@
 require "Day2Pt1"
-# require "Kate"
 require "Day2Pt2"
 
 describe Day2Pt1 do

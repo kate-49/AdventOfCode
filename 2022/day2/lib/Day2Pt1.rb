@@ -10,8 +10,7 @@ class Day2Pt1
     
       myScore = 0
       bigArray.each do |x|
-        string = x[-1].to_s.upcase
-        myScore += Kate.lookup(string)
+        myScore += Kate.lookup(x[-1])
       end
       
       bigArray.each do |x|
@@ -37,7 +36,7 @@ class Kate
         return 6
       elsif input[-1] == "Z"
         # scissors
-        return 0
+      else puts("error1")
       end
     # paper
     elsif input[0] == "B"
@@ -50,6 +49,7 @@ class Kate
       elsif input[-1] == "Z"
         # scissors
         return 6
+      else puts("error2")
       end
     # scissors
     elsif input[0] == "C"
@@ -62,14 +62,14 @@ class Kate
       elsif input[-1] == "Z"
         # scissors
         return 3
+      else puts("error3")
       end
     end
-    return 0
+    puts("error4")
   end
 
   def Kate.lookup(input)
     dictionary = {"X" => 1, "Y" => 2, "Z" => 3 }
-
     return dictionary.fetch(input)
   end
 end
