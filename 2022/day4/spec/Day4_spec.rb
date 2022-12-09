@@ -10,13 +10,13 @@ describe Day4Pt1 do
     end
 end
 
-# describe Day4Pt2 do
+describe Day4Pt2 do
 
-#   context "test examples" do
-#     it "returns true if valid" do
-#       expect(Day4Pt2.run()).to eq(70)
-#     end
+  context "test examples" do
+    it "returns true if valid" do
+      expect(Day4Pt2.run()).to eq(4)
+    end
 
-#   end
+  end
 
-# end
+end
